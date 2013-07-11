@@ -20,7 +20,6 @@ public class Main extends JFrame implements MouseListener {
 	private JTextField nameField = new JTextField();
 	private JTextField addressField = new JTextField();
 
-	private Object[][] data;
 	private String[] columnNames = {"Name","Address"};
 	private DefaultTableModel dModel = new DefaultTableModel(columnNames,0);
 	
@@ -58,7 +57,8 @@ public class Main extends JFrame implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if(nameField.getText().equals("") || addressField.getText().equals("")){
-			JFrame errorFrame = new JFrame("Error!");
+			JFrame errorFrame = new JFrame();
+			errorFrame.setTitle("error!");
 			JOptionPane.showMessageDialog(errorFrame,"Please input text field.");
 		}
 		String[] Data = {nameField.getText(),addressField.getText()};
